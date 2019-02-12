@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
     "extends": "airbnb"
+=======
+    "extends": "airbnb-base"
+>>>>>>> df3a67c16d8b0a45264105ac1c8273de3763705f
 }
