@@ -15,7 +15,7 @@ const router = (req, res) => {
   } else if (endPoint.includes('public')) {
     publicHandler(req, res);
   } else {
-    errorHandler(req, res);
+    errorHandler(res);
   }
 };
 
