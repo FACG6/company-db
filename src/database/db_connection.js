@@ -1,6 +1,6 @@
 const { Pool } = require('pg');
 const url = require('url');
-require('env2')('./config.env');
+require('dotenv').config();
 
 const params = url.parse(process.env.DB_URL);
 const [userName, password] = params.auth.split(':');
