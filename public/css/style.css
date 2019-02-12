@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: wheat;
+  height: 40px;
+  align-items: center;
+}
+.nav--icon {
+  font-size: 1.5em;
+  margin-left: 10px;
+}
+.nav--icon:hover {
+  cursor: pointer;
+}
+.nav--text {
+  font-family: "Righteous", cursive;
+  color: rgb(54, 35, 0);
+}
+.nav--logo {
+  font-size: 1.3em;
+}
+.nav--choose {
+  color: grey;
+  padding-right: 5px;
+}
+.choose:hover {
+  cursor: pointer;
+  color: rgb(54, 35, 0);
+}
