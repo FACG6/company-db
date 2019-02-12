@@ -16,9 +16,9 @@ const homeHandler = (req, res) => {
   });
 };
 
-// const displayDataHandler = (req, res) => {
+const displayDataHandler = (req, res) => {
 
-// };
+};
 
 const publicHandler = (req, res) => {
   const filepath = path.join(__dirname, '..', req.url);
