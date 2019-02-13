@@ -2,8 +2,7 @@ BEGIN;
 
 DROP TABLE IF EXISTS departments ,employees;
 
-CREATE TABLE departments (
-    department_id SERIAL PRIMARY KEY,
+ CREATE TABLE departments(department_id SERIAL PRIMARY KEY,
     department_name TEXT NOT NULL,
     department_description TEXT NOT NULL
 );
@@ -31,4 +30,4 @@ VALUES ('ANIES',26,9000.555,3,'https://scontent.fgza2-1.fna.fbcdn.net/v/t1.0-9/4
 ('ahmedd',19,28.9000,1,'https://avatars2.githubusercontent.com/u/35656148?s=400&v=4'),
 ('jaaa',19,28.9000,1,'https://avatars2.githubusercontent.com/u/35656148?s=400&v=4');
 
-COMMIT;
+ COMMIT;
