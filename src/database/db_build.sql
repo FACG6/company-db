@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS departments ,employees;
 CREATE TABLE employees(
     employee_id SERIAL PRIMARY KEY,
     employee_name TEXT NOT NULL,
-    employee_age INTEGER NOT NULL,
+    employee_age INTEGER ,
     employee_salary FLOAT NOT NULL,
     department_key INTEGER REFERENCES departments(department_id),
     img TEXT

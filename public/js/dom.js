@@ -1,25 +1,25 @@
 /* eslint-disable no-undef */
-const empChoose = document.querySelector(".nav--choose-emp");
-const depChoose = document.querySelector(".nav--choose-dep");
-const container = document.querySelector(".container");
+const empChoose = document.querySelector('.nav--choose-emp');
+const depChoose = document.querySelector('.nav--choose-dep');
+const container = document.querySelector('.container');
 
-empChoose.addEventListener("click", event => {
+empChoose.addEventListener('click', (event) => {
   while (container.firstChild) container.removeChild(container.firstChild);
   fetch({
-    method: "GET",
-    url: "/getEmployees",
+    method: 'GET',
+    url: '/getEmployees',
     value: null,
-    callback: renderEmployees
+    callback: renderEmployees,
   });
 });
 
 depChoose.addEventListener("click", event => {
   while (container.firstChild) container.removeChild(container.firstChild);
   fetch({
-    method: "GET",
-    url: "/getDepartments",
+    method: 'GET',
+    url: '/getDepartments',
     value: null,
-    callback: renderDepartments
+    callback: renderDepartments,
   });
 });
 
