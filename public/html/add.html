@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/public/css/add-page.css" />
+    <title>Add Employee</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Righteous"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="/"><i class="far fa-caret-square-left nav--icon"></i></a>
+      <span class="nav--logo nav--text">Jamalat Co.</span>
+      <span class="nav--choose nav--text">
+        <span class="nav--choose-emp choose"> Emp. </span>|<span
+          class="nav--choose-dep choose"
+          >Dep.</span
+        ></span
+      >
+    </nav>
+    <main class="container">
+      <form action="/add-employee" method="POST">
+        <input
+          name="name"
+          type="text"
+          placeholder="Enter your full name"
+          class="form--name"
+        />
+        <input
+          name="salary"
+          type="number"
+          placeholder="Salary"
+          class="form--salary"
+        />
+        <input
+          name="imgUrl"
+          type="url"
+          placeholder="Image url"
+          class="form--img"
+        />
+        <select name="departments" id="dep" class="form--select">
+          <option value="Managment">Managment</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Accounting and Finance">Accounting and Finance</option>
+          <option value="Human resources management">
+            Human resources management
+          </option>
+        </select>
+        <input
+          name="submit"
+          type="submit"
+          value="Submit"
+          class="form--submit"
+        />
+      </form>
+    </main>
+  </body>
+</html>
