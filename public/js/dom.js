@@ -1,43 +1,43 @@
 /* eslint-disable no-undef */
-const empChoose = document.querySelector(".nav--choose-emp");
-const depChoose = document.querySelector(".nav--choose-dep");
-const container = document.querySelector(".container");
+const empChoose = document.querySelector('.nav--choose-emp');
+const depChoose = document.querySelector('.nav--choose-dep');
+const container = document.querySelector('.container');
 
-empChoose.addEventListener("click", event => {
+empChoose.addEventListener('click', (event) => {
   while (container.firstChild) container.removeChild(container.firstChild);
   fetch({
-    method: "GET",
-    url: "/getEmployees",
+    method: 'GET',
+    url: '/getEmployees',
     value: null,
-    callback: renderEmployees
+    callback: renderEmployees,
   });
 });
-depChoose.addEventListener("click", event => {
+depChoose.addEventListener('click', (event) => {
   while (container.firstChild) container.removeChild(container.firstChild);
   fetch({
-    method: "GET",
-    url: "/getDepartments",
+    method: 'GET',
+    url: '/getDepartments',
     value: null,
-    callback: renderDepartments
+    callback: renderDepartments,
   });
 });
 const renderEmployees = (err, employees) => {
-  employees.forEach(employee => {
-    const div = document.createElement("div");
-    div.classList.add("employees-list");
+  employees.forEach((employee) => {
+    const div = document.createElement('div');
+    div.classList.add('employees-list');
     const spans = [
-      document.createElement("h4"),
-      document.createElement("h4"),
-      document.createElement("h4"),
-      document.createElement("h4")
+      document.createElement('h4'),
+      document.createElement('h4'),
+      document.createElement('h4'),
+      document.createElement('h4'),
     ];
     spans.forEach((element, index) => {
       element.appendChild(
         document.createTextNode(
-          Object.keys(employee)[index] +
-            ":" +
-            employee[Object.keys(employee)[index]]
-        )
+          `${Object.keys(employee)[index] 
+            }:${ 
+            employee[Object.keys(employee)[index]]}`,
+        ),
       );
       div.appendChild(element);
     });
@@ -45,17 +45,17 @@ const renderEmployees = (err, employees) => {
   });
 };
 const renderDepartments = (err, employees) => {
-  employees.forEach(employee => {
-    const div = document.createElement("div");
-    div.classList.add("employees-list");
-    const spans = [document.createElement("h4"), document.createElement("h4")];
+  employees.forEach((employee) => {
+    const div = document.createElement('div');
+    div.classList.add('employees-list');
+    const spans = [document.createElement('h4'), document.createElement('h4')];
     spans.forEach((element, index) => {
       element.appendChild(
         document.createTextNode(
-          Object.keys(employee)[index] +
-            ":" +
-            employee[Object.keys(employee)[index]]
-        )
+          `${Object.keys(employee)[index] 
+            }:${ 
+            employee[Object.keys(employee)[index]]}`,
+        ),
       );
       div.appendChild(element);
     });

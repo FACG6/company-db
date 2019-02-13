@@ -41,11 +41,11 @@ const getEmployeeData = cb => {
 };
 
 
-const getEmployeeData = (cb) => {
-    dbconnections.query(`select employee_name,employee_age,employee_salary,department_name from employees join departments on employees.department_key = departments.department_id`, (err, res) => {
-        if (err) { cb(err) }
-        else { cb(null, res.rows) }
-    })
-}
+// const getEmployeeData = (cb) => {
+//     dbconnections.query(`select employee_name,employee_age,employee_salary,department_name from employees join departments on employees.department_key = departments.department_id`, (err, res) => {
+//         if (err) { cb(err) }
+//         else { cb(null, res.rows) }
+//     })
+// }
 
 module.exports = { getDepartmentData, getEmployeeData, getDemptEmplys };

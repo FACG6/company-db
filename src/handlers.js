@@ -2,7 +2,7 @@ const { readFile } = require('fs');
 const path = require('path');
 const { getDepartmentData, getEmployeeData, getDemptEmplys } = require('./queries/getData');
 const queryString = require('querystring');
-const { postData } = require('./queries/postData');
+const postData = require('./queries/postData.js');
 
 
 const serverError = (err, response) => {
@@ -27,13 +27,13 @@ const handleAddEmployee = (req, res) => {
   });
   req.on('end', () => {
     convertedData = queryString.parse(allData);
-    postData(data, (error, response) => {
+    postData(convertedData, (error, response) => {
       if (error) {
-        res.writeHead(200, { 'content-type': 'text/html' });
+        res.writeHead(500, { 'content-type': 'text/html' });
         res.end('<h1>Server/Database Error</h1>');
       } else {
         res.writeHead(302, { location: '/' });
-        res.end(response);
+        res.end();
       }
     });
   });
