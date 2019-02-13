@@ -1,15 +1,15 @@
-const dbconnections = require("../database/db_connection");
+const dbconnections = require('../database/db_connection');
 
-const getDepartmentData = cb => {
+const getDepartmentData = (cb) => {
   dbconnections.query(
-    `select department_name,department_description from departments`,
+    'select department_name,department_description from departments',
     (err, res) => {
       if (err) {
         cb(err);
       } else {
         cb(null, res.rows);
       }
-    }
+    },
   );
 };
 
@@ -23,20 +23,20 @@ const getDemptEmplys = (deptName, cb) => {
       } else {
         cb(null, res.rows);
       }
-    }
+    },
   );
 };
 
-const getEmployeeData = cb => {
+const getEmployeeData = (cb) => {
   dbconnections.query(
-    `select employee_name, employee_age, employee_salary, department_name from employees join departments on employees.department_key = departments.department_id`,
+    'select employee_name, employee_age, employee_salary, department_name, img from employees join departments on employees.department_key = departments.department_id',
     (err, res) => {
       if (err) {
         cb(err);
       } else {
         cb(null, res.rows);
       }
-    }
+    },
   );
 };
 
