@@ -4,7 +4,7 @@ require('dotenv').config();
 
 let DB_URL = process.env.DB_URL;
 if (process.env.NODE_ENV === 'test') {
-  DB_URL = DB_URL_TEST;
+  DB_URL = process.env.DB_URL_TEST;
 }
 const params = url.parse(process.env.DB_URL);
 const [userName, password] = params.auth.split(':');

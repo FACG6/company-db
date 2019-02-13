@@ -85,7 +85,7 @@ const getDemptEmplysHandler = (req, res) => {
   let allData = '';
   req.on('data', (chunk) => {
     allData += chunk;
-  }
+  });
   req.on('end', () => {
     convertedData = queryString.parse(allData);
   });
@@ -105,12 +105,6 @@ module.exports = {
   displayDataHandler,
   publicHandler,
   errorHandler,
-<<<<<<< HEAD
-  getEmployeeHandler,
-  getDepartHandler,
-  getDemptEmplysHandler
-=======
   addPageHandler,
   handleAddEmployee,
->>>>>>> 99958a93c8f1f95afa76d8e3f4a9ebc3e268c10a
 };

@@ -1,9 +1,11 @@
-const dbconnections = require('../database/db_connection');
 
+const dbconnections = require('../database/db_connection');
 const getDepartmentData = (cb) => {
     dbconnections.query(`select department_name,department_description from departments`, (err, res) => {
         if (err) { cb(err); }
         else {
+            console.log(res.rows);
+            
             cb(null, res.rows);
         }
     })
