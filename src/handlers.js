@@ -5,21 +5,12 @@ const queryString = require('querystring');
 const { postData } = require('./queries/postData');
 
 
-
 const serverError = (err, response) => {
   response.writeHead(500, 'Content-Type:text/html');
   response.end('<h1>Sorry, there was a problem loading the homepage</h1>');
 };
 const homeHandler = (req, res) => {
   const filepath = path.join(__dirname, '..', 'public', 'index.html');
-  readFile(filepath, (err, file) => {
-    if (err) return serverError(err, res);
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end(file);
-  });
-};
-const addPageHandler = (req, res) => {
-  const filepath = path.join(__dirname, '..', 'public', 'html', 'add.html');
   readFile(filepath, (err, file) => {
     if (err) return serverError(err, res);
     res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -107,7 +98,6 @@ const getDemptEmplysHandler = (req, res) => {
 
 module.exports = {
   homeHandler,
-  displayDataHandler,
   publicHandler,
   errorHandler,
   getEmployeeHandler,

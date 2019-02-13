@@ -7,7 +7,7 @@ const fetch = ({
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
-        callback(null, JSON.stringify(xhr.responseText));
+        callback(null, JSON.parse(xhr.responseText));
       } else {
         callback(
           new Error(`Server responded with status code of ${xhr.status}`),

@@ -29,24 +29,27 @@
       >
     </nav>
     <main class="container">
-      <form action="/add-employee" method="POST">
+      <form action="/add-employee" method="POST" class="form">
         <input
           name="name"
           type="text"
           placeholder="Enter your full name"
-          class="form--name"
+          class="form--input"
+          autocomplete="off"
         />
         <input
           name="salary"
           type="number"
           placeholder="Salary"
-          class="form--salary"
+          class="form--input"
+          autocomplete="off"
         />
         <input
           name="imgUrl"
           type="url"
           placeholder="Image url"
-          class="form--img"
+          class="form--input"
+          autocomplete="off"
         />
         <select name="departments" id="dep" class="form--select">
           <option value="Managment">Managment</option>
@@ -64,5 +67,7 @@
         />
       </form>
     </main>
+    <script src="/public/js/fetch.js"></script>
+    <script src="/public/js/dom.js"></script>
   </body>
 </html>
