@@ -2,14 +2,14 @@ const { Pool } = require('pg');
 const url = require('url');
 require('dotenv').config();
 
-let DATABASE_URL = process.env.DATABASE_URL;
+let dbURL = process.env.DATABASE_URL;
 
 if (process.env.NODE_ENV === 'test') {
-  DATABASE_URL = process.env.HEROKU_POSTGRESQL_SILVER_URL;
+  dbURL = process.env.HEROKU_POSTGRESQL_SILVER_URL;
 }
-if (!DATABASE_URL) throw new Error ('there is no url');
+if (!dbURL) throw new Error ('there is no url');
 
-const params = url.parse(DATABASE_URL);
+const params = url.parse(dbURL);
 const [userName, password] = params.auth.split(':');
 const options = {
   host: params.hostname,
