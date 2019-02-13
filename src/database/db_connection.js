@@ -3,10 +3,13 @@ const url = require('url');
 require('dotenv').config();
 
 let DB_URL = process.env.DB_URL;
+
 if (process.env.NODE_ENV === 'test') {
   DB_URL = process.env.DB_URL_TEST;
 }
-const params = url.parse(process.env.DB_URL);
+if (!DB_URL) throw new Error ('there is no url');
+
+const params = url.parse(DB_URL);
 const [userName, password] = params.auth.split(':');
 const options = {
   host: params.hostname,
