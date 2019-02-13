@@ -34,3 +34,17 @@
   cursor: pointer;
   color: rgb(54, 35, 0);
 }
+.employees-list {
+  border: 1px solid saddlebrown;
+  padding: 10px;
+  width: 30%;
+  height: 100px;
+  margin-bottom: 20px;
+}
+.container {
+  padding-top: 50px;
+  justify-content: space-evenly;
+  align-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+}
