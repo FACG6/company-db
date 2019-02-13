@@ -17,8 +17,20 @@ const homeHandler = (req, res) => {
     res.end(file);
   });
 };
+const addPageHandler = (req, res) => {
+  const filepath = path.join(__dirname, '..', 'public', 'html', 'add.html');
+  readFile(filepath, (err, file) => {
+    if (err) return serverError(err, res);
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(file);
+  });
+};
 
 const displayDataHandler = (req, res) => {
+
+};
+
+const handleAddEmployee = (req, res) => {
 
 };
 
@@ -93,7 +105,12 @@ module.exports = {
   displayDataHandler,
   publicHandler,
   errorHandler,
+<<<<<<< HEAD
   getEmployeeHandler,
   getDepartHandler,
   getDemptEmplysHandler
+=======
+  addPageHandler,
+  handleAddEmployee,
+>>>>>>> 99958a93c8f1f95afa76d8e3f4a9ebc3e268c10a
 };
