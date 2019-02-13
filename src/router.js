@@ -5,7 +5,7 @@ const {
   getDepartHandler,
   getEmployeeHandler,
   getDemptEmplysHandler,
-  handleAddEmployee
+  handleAddEmployee,
 } = require("./handlers");
 
 const router = (req, res) => {

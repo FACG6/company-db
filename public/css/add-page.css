@@ -39,21 +39,44 @@
   flex-direction: column;
   justify-content: space-between;
   height: 200px;
+  margin: 0 auto;
   margin-top: 50px;
+  width: 80%;
 }
-.form--input{
-    height: 30px;
-    border: 2px solid #947741;
-    border-radius: 5px;
-    width: 80%;
-    margin: 0 auto;
-    padding: 5px;
+.form--input {
+  height: 30px;
+  border: 2px solid #947741;
+  border-radius: 5px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5px;
 }
-.form--select,.form--submit {
-    height: 30px;
-    border: 1px solid;
-    border-radius: 5px;
-    width: 80%;
-    margin: 0 auto;
-    padding: 5px;
+.form--select,
+.form--submit {
+  height: 30px;
+  border: 1px solid;
+  border-radius: 5px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5px;
+  background: wheat;
+  border: 1px solid saddlebrown;
+  color: saddlebrown;
+  font-weight: bold;
+}
+.form--submit{
+  width: 10%;
+}
+.form--submit:hover{
+  cursor: pointer;
+}
+.employees-list {
+  border: 1px solid saddlebrown;
+  width: 50%;
+  margin: 10px auto;
+  padding: 10px;
+  width: 30%;
+}
+.container {
+  display: flex;
 }
