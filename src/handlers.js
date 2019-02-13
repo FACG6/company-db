@@ -24,11 +24,10 @@ const homeHandler = (req, res) => {
 const publicHandler = (req, res) => {
   const filepath = path.join(__dirname, "..", req.url);
   readFile(filepath, (err, file) => {
-
     if (err) {
       return serverError(err, res);
     }
-    const extension = path.extname(req.url).split('.')[1];
+    const extension = path.extname(req.url).split(".")[1];
     const extensionType = {
       html: "text/html",
       css: "text/css",
@@ -91,5 +90,5 @@ module.exports = {
   errorHandler,
   getEmployeeHandler,
   getDepartHandler,
-  getDemptEmplysHandler,
+  getDemptEmplysHandler
 };

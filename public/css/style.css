@@ -48,3 +48,51 @@
   display: flex;
   flex-wrap: wrap;
 }
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 80%;
+}
+.form--input {
+  height: 30px;
+  border: 2px solid #947741;
+  border-radius: 5px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5px;
+}
+.form--select,
+.form--submit {
+  height: 30px;
+  border: 1px solid;
+  border-radius: 5px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5px;
+  background: wheat;
+  border: 1px solid saddlebrown;
+  color: saddlebrown;
+  font-weight: bold;
+}
+.form--submit {
+  width: 10%;
+}
+.form--submit:hover {
+  cursor: pointer;
+}
+.field-span {
+  color: rgb(83, 35, 0);
+  font-weight: bold;
+}
+@media (max-width: 655px) {
+  .container {
+    flex-direction: column;
+  }
+  .employees-list {
+    width: 100%;
+  }
+}
