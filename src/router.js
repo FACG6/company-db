@@ -3,6 +3,9 @@ const {
   displayDataHandler,
   publicHandler,
   errorHandler,
+  getDepartHandler,
+  getEmployeeHandler,
+  getDemptEmplysHandler
 } = require('./handlers');
 
 const router = (req, res) => {
@@ -14,8 +17,17 @@ const router = (req, res) => {
     displayDataHandler(req, res);
   } else if (endPoint.includes('public')) {
     publicHandler(req, res);
-  } else {
-    errorHandler(req, res);
+  } else if(endPoint === '/getDepartments'){
+    getDepartHandler(req,res);
+  }
+  else if(endPoint === '/getEmployees'){
+    getEmployeeHandler(req,res);
+  }
+   else if(endPoint === '/getDeptEmplys'){
+    getDemptEmplysHandler(req,res);
+  }
+   else {
+    errorHandler(res);
   }
 };
 

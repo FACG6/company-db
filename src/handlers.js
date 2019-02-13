@@ -1,5 +1,7 @@
 const { readFile } = require('fs');
 const path = require('path');
+const { getDepartmentData, getEmployeeData, getDemptEmplys } = require('./queries/getData');
+const queryString = require('querystring');
 
 
 const serverError = (err, response) => {
@@ -16,15 +18,15 @@ const homeHandler = (req, res) => {
   });
 };
 
-// const displayDataHandler = (req, res) => {
+const displayDataHandler = (req, res) => {
 
-// };
+};
 
 const publicHandler = (req, res) => {
   const filepath = path.join(__dirname, '..', req.url);
   readFile(filepath, (err, file) => {
     if (err) return serverError(err, res);
-    const [, extension] = req.url.split('.');
+    const [, extension] = path.extname(req.url)[1];
     const extensionType = {
       html: 'text/html',
       css: 'text/css',
@@ -41,9 +43,57 @@ const errorHandler = (response) => {
   response.end('<h1>404 Page Requested Cannot be Found</h1>');
 };
 
+
+const getDepartHandler = (req, res) => {
+  getDepartmentData((error, response) => {
+    if (error) {
+      res.writeHead(500, { 'content-type': 'text/html' });
+      res.end('<h1>Server/Database Error</h1>');
+    }
+    else {
+      res.writeHead(200, { 'content-type': 'application/json' });
+      res.end(JSON.stringify(response));
+    }
+  })
+}
+const getEmployeeHandler = (req, res) => {
+  getEmployeeData((error, response) => {
+    if (error) {
+      res.writeHead(500, { 'content-type': 'text/html' });
+      res.end('<h1>Server/Database Error</h1>')
+    }
+    else {
+      res.writeHead(200, { 'content-type': 'application/json' });
+      res.end(JSON.stringify(response));
+    }
+  })
+}
+
+const getDemptEmplysHandler = (req, res) => {
+  let allData = '';
+  req.on('data', (chunk) => {
+    allData += chunk;
+  }
+  req.on('end', () => {
+    convertedData = queryString.parse(allData);
+  });
+  getDemptEmplys(convertedData.INPUTNAME, (error, response) => {
+    if(error){
+      res.writeHead(500,{'content-type':'text/html'});
+      res.end('<h1>Server/Database Error</h1>');
+    }
+  })
+}
+
+
+
+
 module.exports = {
   homeHandler,
   displayDataHandler,
   publicHandler,
   errorHandler,
+  getEmployeeHandler,
+  getDepartHandler,
+  getDemptEmplysHandler
 };

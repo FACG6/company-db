@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/server.js",
+    "start": "node ./src/server.js && node ./src/database/db_build.js",
     "test": "tape ./test/server_test.js && tape ./test/db_test.js | tap-spec",
-    "dev": "nodemon ./src/server.js",
-    "watch": "node ./src/database/db_build.js && node ./src/server.js"
+    "dev": "nodemon ./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -22,15 +21,8 @@
   "homepage": "https://github.com/FACG6/company-db#readme",
   "devDependencies": {
     "eslint": "^5.13.0",
-<<<<<<< HEAD
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.12.4",
-=======
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
->>>>>>> df3a67c16d8b0a45264105ac1c8273de3763705f
     "nodemon": "^1.18.10",
     "supertest": "^3.4.2",
     "tap-spec": "^5.0.0",
