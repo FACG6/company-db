@@ -3,7 +3,9 @@ const {
   displayDataHandler,
   publicHandler,
   errorHandler,
-} = require('./handlers');
+  addPageHandler,
+  handleAddEmployee,
+} = require('./handlers.js');
 
 const router = (req, res) => {
   const endPoint = req.url;
@@ -12,8 +14,12 @@ const router = (req, res) => {
     homeHandler(req, res);
   } else if (endPoint === '/display') {
     displayDataHandler(req, res);
-  } else if (endPoint.includes('public')) {
+  } else if (endPoint.includes('/public/')) {
     publicHandler(req, res);
+  } else if (endPoint === '/add-page') {
+    addPageHandler(req, res);
+  } else if (endPoint === '/add-employee') {
+    handleAddEmployee(req, res);
   } else {
     errorHandler(res);
   }
