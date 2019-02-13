@@ -16,7 +16,7 @@ const getDepartmentData = cb => {
 const getDemptEmplys = (deptName, cb) => {
   dbconnections.query(
     `select employee_name, employee_age, employee_salary, departments.department_name from employees join departments ON  employees.department
-    _key = departments.department_id where departments.department_name =${deptName}`,
+    _key = departments.department_id where departments.department_name ='${deptName}'`,
     (err, res) => {
       if (err) {
         cb(err);
