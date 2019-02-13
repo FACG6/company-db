@@ -34,3 +34,9 @@
   cursor: pointer;
   color: rgb(54, 35, 0);
 }
+.employees-list{
+  border: 1px solid saddlebrown;
+  width: 50%;
+  margin: 10px auto;
+  padding: 10px;
+}

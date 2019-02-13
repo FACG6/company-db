@@ -1,36 +1,27 @@
 const {
   homeHandler,
-  displayDataHandler,
   publicHandler,
   errorHandler,
   getDepartHandler,
   getEmployeeHandler,
   getDemptEmplysHandler,
-  addPageHandler,
-  handleAddEmployee,
-} = require('./handlers');
+  handleAddEmployee
+} = require("./handlers");
 
 const router = (req, res) => {
   const endPoint = req.url;
 
-  if (endPoint === '/') {
+  if (endPoint === "/") {
     homeHandler(req, res);
-  } else if (endPoint === '/display') {
-    displayDataHandler(req, res);
-  } else if (endPoint.includes('/public/')) {
+  }else if (endPoint.includes("/public/")) {
     publicHandler(req, res);
-  } else if(endPoint === '/getDepartments'){
-    getDepartHandler(req,res);
-  }
-  else if(endPoint === '/getEmployees'){
-    getEmployeeHandler(req,res);
-  }
-   else if(endPoint === '/getDeptEmplys'){
-    getDemptEmplysHandler(req,res);
-  }
-   else if (endPoint === '/add-page') {
-    addPageHandler(req, res);
-  } else if (endPoint === '/add-employee') {
+  } else if (endPoint === "/getDepartments") {
+    getDepartHandler(req, res);
+  } else if (endPoint === "/getEmployees") {
+    getEmployeeHandler(req, res);
+  } else if (endPoint === "/getDeptEmplys") {
+    getDemptEmplysHandler(req, res);
+  } else if (endPoint === "/add-employee") {
     handleAddEmployee(req, res);
   } else {
     errorHandler(res);
