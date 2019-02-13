@@ -21,7 +21,7 @@ const getDemptEmplys = (deptName, cb) => {
         cb(err);
       }
       else{
-        console.log(res.rows)
+      
         cb(null,res.rows)
       }
     },
