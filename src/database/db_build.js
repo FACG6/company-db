@@ -10,4 +10,4 @@ const runDBBuild = dbConnection.query(sql, (err, res) => {
   console.log('Database is ready');
 });
 runDBBuild();
-module.exports =runDBBuild;
+module.exports = runDBBuild;
