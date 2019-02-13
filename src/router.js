@@ -5,7 +5,7 @@ const {
   getDepartHandler,
   getEmployeeHandler,
   getDemptEmplysHandler,
-  handleAddEmployee,
+  handleAddEmployee
 } = require("./handlers");
 
 const router = (req, res) => {
@@ -13,7 +13,7 @@ const router = (req, res) => {
 
   if (endPoint === "/") {
     homeHandler(req, res);
-  }else if (endPoint.includes("/public/")) {
+  } else if (endPoint.includes("/public/")) {
     publicHandler(req, res);
   } else if (endPoint === "/getDepartments") {
     getDepartHandler(req, res);

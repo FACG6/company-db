@@ -20,4 +20,5 @@ const options = {
   password,
   ssl: process.env.hostname !== 'localhost',
 };
+
 module.exports = new Pool(options);
