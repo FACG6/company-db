@@ -29,7 +29,6 @@ const renderEmployees = (err, employees) => {
     const contentDiv = document.createElement('div');
     const imgDiv = document.createElement('div');
     const img = document.createElement('img');
-    console.log(employee);
     img.src = employee[Object.keys(employee)[4]];
     imgDiv.appendChild(img);
     img.classList.add('emp-photo');

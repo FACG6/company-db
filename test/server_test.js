@@ -13,7 +13,7 @@ tape('Home route returns a status code of 200', (t) => {
       t.end();
     });
 });
-tape('Home route returns a status code of 200', (t) => {
+tape('add route returns a status code of 200', (t) => {
   supertest(router)
     .get("/public/html/add.html")
     .expect(200)
@@ -24,7 +24,7 @@ tape('Home route returns a status code of 200', (t) => {
       t.end();
     });
 });
-tape('Home route returns a status code of 200', (t) => {
+tape('Not Found route returns a status code of 404', (t) => {
   supertest(router)
     .get("/dsadasdasddas")
     .expect(404)
