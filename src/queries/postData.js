@@ -7,7 +7,7 @@ const postData = (data, cb) => {
     'Accounting and Finance': 3,
     'Human resources management': 4,
   };
-  dbconnections.query(`INSERT INTO employees (employee_name,employee_age, employee_salary, department_key) VALUES ('${data.name}','${data.age}','${data.salary}','${deptIDS[data.departments]}');`, (err, res) => {
+  dbconnections.query(`INSERT INTO employees (employee_name,employee_age, employee_salary, department_key,img) VALUES ('${data.name}','${data.age}','${data.salary}','${deptIDS[data.departments]}','${data.imgUrl}');`, (err, res) => {
     if (err) { cb(err); } else {
       cb(null, 'Employee Data add successfully');
     }
