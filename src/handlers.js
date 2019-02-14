@@ -17,9 +17,6 @@ const homeHandler = (req, res) => {
     res.end(file);
   });
 };
-const displayDataHandler = (req, res) => {
-
-};
 const handleAddEmployee = (req, res) => {
   let allData = '';
   req.on('data', (chunk) => {
